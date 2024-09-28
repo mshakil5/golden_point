@@ -5,7 +5,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Kuddus Oil Store</title>
+    <title>Admin</title>
     <!-- Twitter meta-->
     <meta property="twitter:card" content="hasibuzzaman">
     <meta property="twitter:site" content="@hasibuzzaman">
