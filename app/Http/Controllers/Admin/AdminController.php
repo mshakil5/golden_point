@@ -56,7 +56,7 @@ class AdminController extends Controller
     }
 
     public function changeAdminPassword(Request $request)
-        {
+    {
 
             if(empty($request->opassword)){
                 $message ="<div class='alert alert-warning'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><b>Please fill \"Old Password\" field..!</b></div>";
@@ -104,7 +104,7 @@ class AdminController extends Controller
             return response()->json(['status'=> 303,'message'=>$message]);
              }
 
-        }
+    }
 
 
 
@@ -455,22 +455,8 @@ class AdminController extends Controller
         } 
     }
 
-    // public function agentCertificateUpdate(Request $request)
-    // {
-    //     $request->validate([
-    //         'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-    //     ]);
-    //     $imageName = time().'.'.$request->image->extension();
-    //     $request->image->move(public_path('certificate'), $imageName);
-    //     /* Store $imageName name in DATABASE from HERE */
-    //     $photo = User::find(Auth::User()->id);
-    //     $photo->c_image= $imageName;
-    //     $photo->save();
-    //     return back()
-    //         ->with('success','You have successfully upload image.')
-    //         ->with('image',$imageName);
-    // }
 
+    
     public function agentdestroy($id)
     {
 

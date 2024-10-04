@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\SalesController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\TransactionController;
@@ -11,8 +11,6 @@ use App\Http\Controllers\ReportController;
 use App\Http\Controllers\Admin\ContactMailController; 
 use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Agent\AgentController;
-use App\Http\Controllers\User\UserController;
 
 //admin part start
 Route::group(['prefix' =>'admin/', 'middleware' => ['auth', 'is_admin']], function(){
@@ -48,16 +46,16 @@ Route::group(['prefix' =>'admin/', 'middleware' => ['auth', 'is_admin']], functi
     Route::get('/photo/{id}', [ImageController::class, 'delete']);
 
     
-    // customer
-    Route::get('/customer', [CustomerController::class, 'index'])->name('admin.customer');
-    Route::post('/customer', [CustomerController::class, 'store']);
-    Route::get('/customer/{id}/edit', [CustomerController::class, 'edit']);
-    Route::put('/customer/{id}', [CustomerController::class, 'update']);
-    Route::get('/customer/{id}', [CustomerController::class, 'delete']);
-    Route::post('/getcustomer', [CustomerController::class, 'getcustomer']);
-    Route::post('/customer-deposit', [CustomerController::class, 'customerDeposit']);
-    Route::get('/customer-transaction/{id}', [CustomerController::class, 'getCustomerTransaction'])->name('customer.tran');
-    Route::post('/customer-tran-update', [CustomerController::class, 'customerTranUpdate']);
+    // supplier
+    Route::get('/supplier', [SupplierController::class, 'index'])->name('admin.supplier');
+    Route::post('/supplier', [SupplierController::class, 'store']);
+    Route::get('/supplier/{id}/edit', [SupplierController::class, 'edit']);
+    Route::put('/supplier/{id}', [SupplierController::class, 'update']);
+    Route::get('/supplier/{id}', [SupplierController::class, 'delete']);
+    Route::post('/getsupplier', [SupplierController::class, 'getsupplier']);
+    Route::post('/supplier-deposit', [SupplierController::class, 'supplierDeposit']);
+    Route::get('/supplier-transaction/{id}', [SupplierController::class, 'getCustomerTransaction'])->name('supplier.tran');
+    Route::post('/supplier-tran-update', [SupplierController::class, 'supplierTranUpdate']);
     
     // sale
     Route::get('/sale', [SalesController::class, 'index'])->name('admin.sale');

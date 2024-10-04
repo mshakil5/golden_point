@@ -6,10 +6,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Admin</title>
-    <!-- Twitter meta-->
-    <meta property="twitter:card" content="hasibuzzaman">
-    <meta property="twitter:site" content="@hasibuzzaman">
-    <meta property="twitter:creator" content="@hasibuzzaman">
     <!-- Open Graph Meta-->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Vali Admin">
@@ -113,7 +109,7 @@
         </li> --}}
 
         @if(Auth::user()->is_type == 'admin' || in_array('3', json_decode(Auth::user()->staff->role->permissions)))
-        <li><a class="app-menu__item" href="{{ route('admin.customer')}}" id="customer"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Customer</span></a></li>
+        <li><a class="app-menu__item" href="{{ route('admin.supplier')}}" id="supplier"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Supplier</span></a></li>
         @endif
 
         @if(Auth::user()->is_type == 'admin' || in_array('3', json_decode(Auth::user()->staff->role->permissions)))
