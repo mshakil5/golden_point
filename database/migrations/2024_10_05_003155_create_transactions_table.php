@@ -15,12 +15,18 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('sale_id')->unsigned()->nullable();
-            $table->foreign('sale_id')->references('id')->on('sales')->onDelete('cascade');
-            $table->bigInteger('customer_id')->unsigned()->nullable();
-            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
             $table->string('date',191)->nullable();
             $table->string('type',191)->nullable();
+            $table->bigInteger('sale_id')->unsigned()->nullable();
+            $table->foreign('sale_id')->references('id')->on('sales')->onDelete('cascade');
+            $table->bigInteger('supplier_id')->unsigned()->nullable();
+            $table->foreign('supplier_id')->references('id')->on('suppliers')->onDelete('cascade');
+            $table->bigInteger('branch_id')->unsigned()->nullable();
+            $table->foreign('branch_id')->references('id')->on('branches')->onDelete('cascade');
+            $table->bigInteger('product_id')->unsigned()->nullable();
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            $table->bigInteger('customer_id')->unsigned()->nullable();
+            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
             $table->string('transfer_from',191)->nullable();
             $table->bigInteger('account_id')->unsigned()->nullable();
             $table->foreign('account_id')->references('id')->on('accounts')->onDelete('cascade');
