@@ -13,7 +13,7 @@
     </div>
     <div class="row">
 
-      <div class="col-md-6 col-lg-3">
+      <div class="col-md-6 col-lg-3 d-none">
         <div class="widget-small info coloured-icon"><i class="icon fa fa-money fa-3x"></i>
           <div class="info">
             <h4>Total Balance</h4>
@@ -23,7 +23,7 @@
       </div>
 
       <?php $__currentLoopData = \App\Models\Account::all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $acc): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-      <div class="col-md-6 col-lg-3">
+      <div class="col-md-6 col-lg-3 d-none">
         <div class="widget-small primary coloured-icon"><i class="icon fa fa-money fa-3x"></i>
           <div class="info">
             <h4><?php echo e($acc->name); ?> Amount</h4>

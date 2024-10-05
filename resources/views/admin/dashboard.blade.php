@@ -13,7 +13,7 @@
     </div>
     <div class="row">
 
-      <div class="col-md-6 col-lg-3">
+      <div class="col-md-6 col-lg-3 d-none">
         <div class="widget-small info coloured-icon"><i class="icon fa fa-money fa-3x"></i>
           <div class="info">
             <h4>Total Balance</h4>
@@ -23,7 +23,7 @@
       </div>
 
       @foreach (\App\Models\Account::all() as $key => $acc)
-      <div class="col-md-6 col-lg-3">
+      <div class="col-md-6 col-lg-3 d-none">
         <div class="widget-small primary coloured-icon"><i class="icon fa fa-money fa-3x"></i>
           <div class="info">
             <h4>{{$acc->name}} Amount</h4>
